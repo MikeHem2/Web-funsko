@@ -1,0 +1,15 @@
+.imgg{
+    
+    padding: 80px;
+    display: block;
+    margin-left: 150px;
+    margin-right: 150px;
+    top: 150px;
+}
+.op{
+    
+    color: blue;
+    position: relative;
+    text-align: center;
+    
+}

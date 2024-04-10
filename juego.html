@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="juego.css">
+<link rel="stylesheet" href="juego.js">
+<title>Piedra, Papel, Tijera</title>
+</head>
+<body>
+
+<h1 class="op"> PIEDRA, PAPEL Y TIJERA</h1>
+
+<button onclick="jugar('piedra')"> <img class="imgg" src="icons8-roca-48.png" alt=""></button>
+<button onclick="jugar('papel')"><img class="imgg" src="icons8-papel-50.png" alt=""></button>
+<button onclick="jugar('tijera')"><img class="imgg" src="icons8-tijeras-50.png" alt=""></button>
+
+<p id="resultado"></p>
+
+<script>
+    function jugar(jugador) {
+    const opciones = ['piedra', 'papel', 'tijera'];
+    const mike = opciones[Math.floor(Math.random() * opciones.length)];
+    
+    let resultado = '';
+
+    if (jugador === mike) {
+        resultado = '¡Es un empate!';
+    } else if (
+        (jugador === 'piedra' && mike === 'tijera') ||
+        (jugador === 'papel' && mike === 'piedra') ||
+        (jugador === 'tijera' && mike === 'papel')
+    ) {
+        resultado = '¡Ganaste!';
+    } else {
+        resultado = '¡Perdiste!';
+    }
+    
+    document.getElementById('resultado').innerHTML = `Elegiste ${jugador}, Mike eligió ${mike}. ${resultado}`;
+}
+</script>
+
+</body>
+</html>
